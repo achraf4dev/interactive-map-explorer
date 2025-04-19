@@ -10,10 +10,8 @@ export const geocodeAddress = async (address: string): Promise<GeocodingResult[]
       params: {
         q: address,
         format: 'json',
-        addressdetails: 1
-      },
-      headers: {
-        'User-Agent': 'ReactLeafletProject' // Required by Nominatim's terms of use
+        addressdetails: 1,
+        email: 'achrafibrahimi.1998@gmail.com' 
       }
     });
     
@@ -32,10 +30,8 @@ export const reverseGeocode = async (lat: number, lon: number): Promise<Geocodin
         lat,
         lon,
         format: 'json',
-        addressdetails: 1
-      },
-      headers: {
-        'User-Agent': 'ReactLeafletProject'
+        addressdetails: 1,
+        email: 'achrafibrahimi.1998@gmail.com'
       }
     });
     
