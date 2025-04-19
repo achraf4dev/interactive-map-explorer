@@ -1,0 +1,290 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #3498db;
+  margin: 8px auto;
+  border-radius: 2px;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container form {
+  display: flex;
+  gap: 10px;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.search-container input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.search-container button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+  background-color: #2980b9;
+}
+
+.search-container button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: #ffecee;
+  color: #e74c3c;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border-left: 4px solid #e74c3c;
+}
+
+.location-info {
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.current-weather {
+  display: flex;
+  align-items: center;
+}
+
+.current-weather img {
+  width: 50px;
+  height: 50px;
+}
+
+.temperature {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+.description {
+  text-transform: capitalize;
+  color: #7f8c8d;
+}
+
+.map-container {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/* Places list section */
+.places-list {
+  margin-top: 30px;
+}
+
+.places-list h3 {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.place-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.place-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.place-card h4 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.place-category {
+  display: inline-block;
+  background-color: #e9f2fe;
+  color: #3498db;
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.place-address {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin: 8px 0;
+}
+
+.show-on-map-btn {
+  background-color: transparent;
+  color: #3498db;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.show-on-map-btn:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Make leaflet popup more modern */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.leaflet-popup-content {
+  margin: 10px 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #95a5a6;
+  font-size: 0.9rem;
+}
+
+.app-footer p {
+  margin: 5px 0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .search-container form {
+    flex-direction: column;
+  }
+  
+  .location-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .location-info h2 {
+    margin-bottom: 10px;
+  }
+  
+  .map-container {
+    height: 400px !important;
+  }
+  
+  .places-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.toggle-label input {
+  margin-right: 8px;
+}
+
+.toggle-label span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.toggle-label span::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 8px;
+  border-radius: 50%;
+  background-color: #e74c3c;
+  transition: background-color 0.3s;
+}
+
+.toggle-label input:checked + span::after {
+  background-color: #2ecc71;
+}
